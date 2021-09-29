@@ -4,46 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BusyPink</title>
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+    <title>Portfolio</title>
 </head>
 <body>
     <div class="container">
         <div class="wrapper">
-            <h1>Page Under Construction</h1>
-            <h2>please return later</h2>
+            <div id="blob-div">
+                <svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                    <g transform="translate(439.6206055468611 266.44224354496146)"><path id="blob1" d="M136.3 -111.3C186.3 -86.3 243.1 -43.1 246.2 3.1C249.3 49.3 198.5 98.5 148.5 138.4C98.5 178.2 49.3 208.6 -4.4 213C-58 217.3 -116 195.6 -159 155.8C-202 116 -230 58 -225 4.9C-220.1 -48.1 -182.2 -96.2 -139.2 -121.2C-96.2 -146.2 -48.1 -148.1 -2.5 -145.6C43.1 -143.1 86.3 -136.3 136.3 -111.3" fill="#fa6a9a"></path></g>
+                    <g transform="translate(418.146561108423 287.1494147150425)"><path id="blob2" d="M169.3 -150.1C219.3 -119.3 259.6 -59.6 259.8 0.1C259.9 59.9 219.7 119.7 169.7 155.2C119.7 190.7 59.9 201.9 -1.4 203.3C-62.7 204.7 -125.4 196.4 -160.6 160.9C-195.7 125.4 -203.4 62.7 -189.7 13.7C-176 -35.4 -141 -70.7 -105.9 -101.5C-70.7 -132.4 -35.4 -158.7 12.1 -170.8C59.6 -183 119.3 -180.9 169.3 -150.1" fill="#fa6a9a"></path></g>
+                </svg>
+            </div>
+            <div id="title"><h1>page under construction</h1></div>
         </div>
     </div>
 </body>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
-:root{
-    padding:0;
-    margin:0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    color:#555;
-}
-h1{
-    font-size: 3em;
-}
-h2{
-    font-style: normal;
-    font-size:2em;
-}
-.container{
-    display:grid;
-    place-items:center;
-    text-align: center;
-    width:100vw;
-    height:100vh;
-    position:absolute;
-}
-.wrapper{
-    display:grid;
-    place-items:center;
-    text-align: center;
-    padding:2vw;
-    box-shadow: 1px 1px 5em #ddd;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap');
+    :root{
+        margin:0;
+        border:0;
+        box-sizing: border-box;
+        background-color: #333;
+        color:#ddd;
+        font-family: 'Nunito', sans-serif;
+    }
+    .container{
+        width:100vw;
+        height:100vh;
+        /* overflow:hidden; */
+        position:fixed;
+        display: grid;
+        place-items: center;
+    }
+    .wrapper{
+        position:absolute;
+        display: grid;
+        place-items:center;
+    }
+    #title{
+        position:absolute;
+    }
+    #blob2{
+        visibility: hidden;
+    }
 </style>
+<script>
+    const blobby = KUTE.fromTo(
+        '#blob1',
+        {path: '#blob1'},
+        {path: '#blob2'},
+        {repeat: 999, duration:3000, yoyo:true}
+    )
+    blobby.start()
+</script>
 </html>
